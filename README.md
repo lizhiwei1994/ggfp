@@ -18,7 +18,7 @@ fine-grained graph adjustment parameters are not available in `gg_fp()`.
 You can install the development version of ggfp like so:
 
 ``` r
-# devtools::install_github('lizhiwei1994/ggfp)
+# devtools::install_github('lizhiwei1994/ggfp')
 ```
 
 ## Example
