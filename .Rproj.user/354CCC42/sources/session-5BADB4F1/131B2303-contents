@@ -1,0 +1,19 @@
+library(devtools)
+library(usethis)
+
+
+d1 = read.csv('E:\\A\\project\\github\\How to plot in R\\examples\\data\\forestplot_ggplot.csv')
+d2 = read.csv('E:\\A\\project\\github\\How to plot in R\\examples\\data\\forestplot_ggplot.csv')
+
+d1 = d1 %>% mutate(country = 'China')
+d2 = d2 %>% mutate(country = 'USA')
+example_data = bind_rows(d1, d2)
+
+usethis::use_data(example_data, overwrite = T)
+
+document()
+check()
+
+load_all()
+
+load(system.file('data', 'example_data.rda', package = 'ggfp'))

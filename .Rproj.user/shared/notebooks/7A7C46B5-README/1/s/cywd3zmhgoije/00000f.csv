@@ -1,0 +1,2 @@
+"0","library(ggfp)"
+"0","load(system.file('data', 'example_data.rda', package = 'ggfp'))"
