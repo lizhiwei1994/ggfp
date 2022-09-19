@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggfp: Easy way to draw a forest plot (fp) with ggplot2(gg)
+# ggfp: Easy way to draw a forest plot (fp) with ggplot2(gg) <img src="man/figures/logo.png" alt="logo" align="right" height="140" width="120"/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-%23fd8008.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![install with

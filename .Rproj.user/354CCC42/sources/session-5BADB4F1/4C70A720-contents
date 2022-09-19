@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ggfp: Easy way to draw a forest plot (fp) with ggplot2(gg)
+# ggfp: Easy way to draw a forest plot (fp) with ggplot2(gg) <img src="man/figures/logo.png" alt="logo" align="right" height="140" width="120"/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-%23fd8008.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![install with devtools](https://img.shields.io/badge/install%20with-devtools-brightgreen.svg)](https://cran.r-project.org/web/packages/devtools/index.html)
