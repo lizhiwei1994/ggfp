@@ -1,0 +1,18 @@
+"0","library(ggfp)"
+"0","## basic example code"
+"0",""
+"0","gg_fp("
+"0","  data = example_data,"
+"0","  x_axis = Disease,"
+"0","  point = PC,"
+"0","  low = PC_95_LOW,"
+"0","  up = PC_95_UP,"
+"0","  group_var = group,"
+"0","  facet_var = country,"
+"0","  group_color = c(""#ea4a50"", ""#325788"", ""dodgerblue"", ""coral1""),"
+"0","  point_shape = c(16, 16, 16, 16)"
+"0","  "
+"0",")"
+"2","Error in gg_fp(data = example_data, x_axis = Disease, point = PC, low = PC_95_LOW,  : 
+  argument ""facet_color"" is missing, with no default
+"

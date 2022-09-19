@@ -27,50 +27,30 @@ devtools::install_github('lizhiwei1994/ggfp)
 
 ## :beginner: Usage
 
-First, we create a fake data.frame to show how to use `gg_fp()`.
+We use the data built into the `ggfp` package for the demonstration.
+After you library the `ggfp` package, you can import the example data
+into R with the following code.
 
 ``` r
-library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-#> ✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
-#> ✔ tibble  3.1.7      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-#> ✔ readr   2.1.2      ✔ forcats 0.5.1
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-set.seed(123)
-people_name = paste('author', 1:7)
-group = paste('group', 1:4)
-facet = paste('facet', 1:5)
-
-df = 
-  expand.grid(people_name = people_name, 
-                 group       = group,
-                 facet       = facet) %>% 
-  mutate(b  = rnorm(nrow(.)),
-         se = rnorm(nrow(.)),
-         low_95 = b - 1.96*se,
-         up_95  = b + 1.96*se) %>% 
-  as_tibble()
+library(ggfp)
+data('example_data', package = 'ggfp')
 ```
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(ggfp)
-## basic example code
 
 gg_fp(
-  data = df,
-  x_axis = people_name,
-  point = b,
-  low = low_95,
-  up = up_95,
+  data = example_data,
+  x_axis = Disease,
+  point = PC,
+  low = PC_95_LOW,
+  up = PC_95_UP,
   group_var = group,
-  facet_var = facet,
-  facet_color = c(rep('white', 5)),
-  group_color = c('red', 'green', 'yellow', 'orange'),
+  facet_var = country,
+  facet_color = c(rep('white', 2)),
+  group_color = c("#ea4a50", "#325788", "dodgerblue", "coral1"),
   point_shape = c(16, 16, 16, 16)
   
 )
@@ -78,29 +58,49 @@ gg_fp(
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-You can change the facet strip color by giving color name to
-`facet_color`.
+You can change the facet strip color by giving `color name` or
+`hexadecimal colors` to `facet_color`.
 
 ``` r
 gg_fp(
-  data = df,
-  x_axis = people_name,
-  point = b,
-  low = low_95,
-  up = up_95,
+  data = example_data,
+  x_axis = Disease,
+  point = PC,
+  low = PC_95_LOW,
+  up = PC_95_UP,
   group_var = group,
-  facet_var = facet,
-  facet_color = c('blue', 'red', 'purple', 'blue', 'red'),
-  group_color = c('red', 'green', 'yellow', 'orange'),
+  facet_var = country,
+  facet_color = c('skyblue', '#d9d9d9'),
+  group_color = c("#ea4a50", "#325788", "dodgerblue", "coral1"),
   point_shape = c(16, 16, 16, 16)
   
 )
 ```
 
-<img src="man/figures/README-change facet color-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Change the axis labels by `label.x` and `label.y`. Change the number of
+decimal places displayed on the y-axis via `point.digit`.
+
+``` r
+gg_fp(
+  data = example_data,
+  x_axis = Disease,
+  point = PC,
+  low = PC_95_LOW,
+  up = PC_95_UP,
+  group_var = group,
+  facet_var = country,
+  facet_color = c('skyblue', '#d9d9d9'),
+  group_color = c("#ea4a50", "#325788", "dodgerblue", "coral1"),
+  point_shape = c(16, 16, 16, 16),
+  label.x = 'Disease',
+  label.y = 'Percentage Change and 95% CI',
+  point.digit = 0.001
+)
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ## :page_with_curl: About Author
 
