@@ -102,6 +102,11 @@ gg_fp(
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
+> Note: `gg_fp()` sets a base for the font size. For `axis.title` and
+> `strip.text` it is `14`, for other fonts it is `12`. So the fonts will
+> overlap when displayed in the readme. It is recommended to save the
+> ggfp figure with `width = 14`, `height = 8`.
+
 ## :page_with_curl: About Author
 
 Zhiwei Li (<lizhiwei@ccmu.edu.cn>)
